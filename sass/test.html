@@ -1,0 +1,156 @@
+<script>
+    const hueMap = ['red', 'orange', 'yellow', 'kiwi', 'light-green', 'green', 'teal', 'cyan', 'light-blue', 'blue', 'indigo', 'purple', 'pink']
+    const updateColor = () => {
+        const color = document.getElementById('color-id').value;
+        const hueName = hueMap[color];
+        document.documentElement.style.setProperty('--base-hue', `var(--hue-${hueName})`);
+        color_name.innerHTML = hueName;
+    }
+    const updateColorConstant = () => {
+        const color = document.getElementById('constant-color-id').value;
+        document.documentElement.style.setProperty('--base-hue', color);
+        constant_color_name.innerHTML = color;
+    }
+    window.onload = () => updateColor();
+</script>
+
+<style>
+    @font-face {
+        font-family: 'Pretendard-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    * {
+        font-family: 'Pretendard-Regular';
+    }
+
+    .box {
+        width: 400px;
+        height: 100px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .box-list {
+        display: flex;
+    }
+</style>
+<div>
+    <input type="range" id="color-id" min="0" max="12" step="1" oninput="updateColor()" value="0">
+    <label for="color_id" id="color_name">Color</label>
+</div>
+<div>
+    <input type="range" id="constant-color-id" min="0" max="360" step="1" oninput="updateColorConstant()" value="0">
+    <label for="constant-color_id" id="constant_color_name">Constant Color</label>
+</div>
+<div class="box-list">
+    <div class="box" style="background-color: var(--color-p50)"></div>
+    <div class="box" style="background-color: var(--color-p100)"></div>
+    <div class="box" style="background-color: var(--color-p200)"></div>
+    <div class="box" style="background-color: var(--color-p300)"></div>
+    <div class="box" style="background-color: var(--color-p400)"></div>
+    <div class="box" style="background-color: var(--color-p500)"></div>
+    <div class="box" style="background-color: var(--color-p600)"></div>
+    <div class="box" style="background-color: var(--color-p700)"></div>
+    <div class="box" style="background-color: var(--color-p800)"></div>
+    <div class="box" style="background-color: var(--color-p900)"></div>
+    <div class="box" style="background-color: var(--color-a100)"></div>
+    <div class="box" style="background-color: var(--color-a200)"></div>
+    <div class="box" style="background-color: var(--color-a400)"></div>
+    <div class="box" style="background-color: var(--color-a700)"></div>
+    <div class="box" style="background-color: var(--color-s1)"></div>
+    <div class="box" style="background-color: var(--color-s2)"></div>
+    <div class="box" style="background-color: var(--color-s3)"></div>
+    <div class="box" style="background-color: var(--color-s4)"></div>
+    <div class="box" style="background-color: var(--color-s5)"></div>
+    <div class="box" style="background-color: var(--color-s6)"></div>
+    <div class="box" style="background-color: var(--color-s7)"></div>
+</div>
+
+<div class="preview" style="background-color: var(--color-s1)">
+    <div class="box"></div>
+    <div class="box" style="background-color: var(--color-s2); color: var(--color-a100); padding: 20px">
+        <button style="background-color: var(--color-p500); color: white; font-size: 14px; padding: 10px 24px; border-radius: 8px; border: none; margin-bottom: 10px;text-shadow: #00000096 1px 1px 8px;">Primary Button</button>
+        <button style="background-color: var(--color-s6); color: var(--color-a100); font-size: 14px; padding: 10px 24px; border-radius: 8px; border: none; text-shadow: #00000096 1px 1px 8px;">Second Button</button>
+    </div>
+    <div class="box"></div>
+    <div class="box" style="background-color: var(--color-s3); color: var(--color-a100); padding: 20px">
+        <span style="color: var(--color-a700)">Hello World! 한국어 테스트 입니다.</span><br>
+        <span style="color: var(--color-a400)">Hello World! 한국어 테스트 입니다.</span><br>
+        <span style="color: var(--color-a200)">Hello World! 한국어 테스트 입니다.</span><br>
+        Hello World! 한국어 테스트 입니다.</div>
+    <div class="box"></div>
+    <div class="box" style="background-color: var(--color-s4); color: var(--color-a100); padding: 20px">
+        Hello World! 한국어 테스트 입니다.</div>
+    <div class="box"></div>
+    <div class="box" style="background-color: var(--color-s5); color: var(--color-a100); padding: 20px">
+        Hello World! 한국어 테스트 입니다.</div>
+    <div class="box"></div>
+    <div class="box" style="background-color: var(--color-s6); color: var(--color-a100); padding: 20px">
+        Hello World! 한국어 테스트 입니다.</div>
+    <div class="box"></div>
+    <div class="box" style="background-color: var(--color-s7); color: var(--color-a100); padding: 20px">
+        Hello World! 한국어 테스트 입니다.</div>
+</div>
+
+<style>
+    :root {
+        --hue-red: 0;
+        --hue-orange: 20;
+        --hue-yellow: 30;
+        --hue-kiwi: 50;
+        --hue-light-green: 100;
+        --hue-green: 130;
+        --hue-teal: 160;
+        --hue-cyan: 180;
+        --hue-light-blue: 200;
+        --hue-blue: 216;
+        --hue-indigo: 230;
+        --hue-purple: 270;
+        --hue-pink: 336;
+        --sat-lit-p50: 40% 90%;
+        --color-p50: hsl(var(--base-hue) 40% 90%);
+        --sat-lit-p100: 40% 80%;
+        --color-p100: hsl(var(--base-hue) 40% 80%);
+        --sat-lit-p200: 40% 65%;
+        --color-p200: hsl(var(--base-hue) 40% 65%);
+        --sat-lit-p300: 40% 50%;
+        --color-p300: hsl(var(--base-hue) 40% 50%);
+        --sat-lit-p400: 60% 40%;
+        --color-p400: hsl(var(--base-hue) 60% 40%);
+        --sat-lit-p500: 100% 30%;
+        --color-p500: hsl(var(--base-hue) 100% 30%);
+        --sat-lit-p600: 100% 25%;
+        --color-p600: hsl(var(--base-hue) 100% 25%);
+        --sat-lit-p700: 100% 20%;
+        --color-p700: hsl(var(--base-hue) 100% 20%);
+        --sat-lit-p800: 100% 15%;
+        --color-p800: hsl(var(--base-hue) 100% 15%);
+        --sat-lit-p900: 100% 10%;
+        --color-p900: hsl(var(--base-hue) 100% 10%);
+        --sat-lit-a100: 100% 75%;
+        --color-a100: hsl(var(--base-hue) 100% 75%);
+        --sat-lit-a200: 100% 65%;
+        --color-a200: hsl(var(--base-hue) 100% 65%);
+        --sat-lit-a400: 100% 55%;
+        --color-a400: hsl(var(--base-hue) 100% 55%);
+        --sat-lit-a700: 100% 45%;
+        --color-a700: hsl(var(--base-hue) 100% 45%);
+        --sat-lit-s1: 9% 10%;
+        --color-s1: hsl(var(--base-hue) 9% 10%);
+        --sat-lit-s2: 9% 12%;
+        --color-s2: hsl(var(--base-hue) 9% 12%);
+        --sat-lit-s3: 9% 14%;
+        --color-s3: hsl(var(--base-hue) 9% 14%);
+        --sat-lit-s4: 9% 16%;
+        --color-s4: hsl(var(--base-hue) 9% 16%);
+        --sat-lit-s5: 10% 18%;
+        --color-s5: hsl(var(--base-hue) 10% 18%);
+        --sat-lit-s6: 10% 22%;
+        --color-s6: hsl(var(--base-hue) 10% 22%);
+        --sat-lit-s7: 10% 28%;
+        --color-s7: hsl(var(--base-hue) 10% 28%);
+    }
+</style>

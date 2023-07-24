@@ -1,0 +1,61 @@
+$hues: (
+    "red": 0,
+    "orange": 20,
+    "yellow": 30,
+    "kiwi": 50,
+    "light-green": 100,
+    "green": 130,
+    "teal": 160,
+    "cyan": 180,
+    "light-blue": 200,
+    "blue": 216,
+    "indigo": 230,
+    "purple": 270,
+    "pink": 336, 
+);
+
+$sat_lit: (
+    // kv; saturation, lightness in hsl()
+    // primary colors
+    "p50": 40% 90%,
+    "p100": 40% 80%,
+    "p200": 40% 65%,
+    "p300": 40% 50%,
+    "p400": 60% 40%,
+    "p500": 100% 30%,
+    "p600": 100% 25%,
+    "p700": 100% 20%,
+    "p800": 100% 15%,
+    "p900": 100% 10%,
+
+    // alternative
+    "a100": 100% 75%,
+    "a200": 100% 65%,
+    "a400": 100% 55%,
+    "a700": 100% 45%,
+
+    // surface
+    "s1": 9% 10%,
+    "s2": 9% 12%,
+    "s3": 9% 14%,
+    "s4": 9% 16%,
+    "s5": 10% 18%,
+    "s6": 10% 22%,
+    "s7": 10% 28%
+);
+
+:root {
+    @each $hue, $deg in $hues {
+        --hue-#{$hue}: #{$deg};
+        //@each $sat_lit, $sat_lit_val in $sat_lit {
+        //    --color-#{$hue}-#{$sat_lit}: hsl(#{$deg} #{$sat_lit_val});
+        //}
+    }
+
+    @each $sat_lit, $sat_lit_val in $sat_lit {
+        --sat-lit-#{$sat_lit}: #{$sat_lit_val};
+        --color-#{$sat_lit}: hsl(var(--base-hue) #{$sat_lit_val});
+    }
+
+}
+    
