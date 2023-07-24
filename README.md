@@ -5,9 +5,10 @@
 WIP. 현재 개발 중입니다.
 
 ## 구현체
-[ ] Svelte
-[ ] Jetpack Compose
-[ ] CSS
+- [ ] Svelte
+- [ ] Jetpack Compose
+- [ ] CSS
 
 ## Figma
 Figma 링크는 다음과 같습니다. 단, 열람 권한이 필요하기에 개인적으로 연락 주시면 승인해드리도록 하겠습니다.
+- https://www.figma.com/file/SWbxeQrXQccE5qFZ9T2IpQ/roto-design-system
